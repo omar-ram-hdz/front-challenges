@@ -1,0 +1,250 @@
+* {
+  /* RESETEO BASICO DE ESTILOS */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Be Vietnam Pro", serif;
+  /* DECLARACION DE COLORES */
+  --accent-white: #d5dee7;
+  --primary-purple: #9a19cc;
+  --accent-purple: #f1eeff;
+  --primary-gray: #534e58;
+  --accent-gray: #a0a0a0;
+  --red: #d9534f;
+}
+body {
+  overflow-x: hidden;
+}
+main {
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  padding: 50px;
+}
+form {
+  accent-color: var(--primary-purple);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 90px;
+}
+/* PRIMERA SECCIÓN  NORMAL, SEGUNDA CON BACKGROUND GRIS AZUL*/
+.form-section {
+  width: 100%;
+  padding: 40px;
+  border-radius: 15px;
+  flex: 1;
+  overflow-y: hidden;
+}
+.form-section.accent {
+  background-color: var(--accent-white);
+  position: relative;
+}
+/* LOGO DE LA EMPRESA CON EL NOMBRE */
+.logotipo {
+  display: flex;
+  align-items: center;
+  margin-left: -15px;
+  & img {
+    width: 60px;
+    height: 60px;
+  }
+  & p {
+    color: var(--primary-purple);
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: -15px;
+  }
+}
+/* TÍTULO DE LA PÁGINA */
+h1 {
+  font-size: 2.5rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+/* DAMOS COLOR A TODOS LOS TEXTOS */
+p,
+label,
+legend {
+  color: var(--primary-gray);
+}
+/* MARGENES DE LOS CAMPOS DE FORMULARIO */
+header {
+  margin-bottom: 40px;
+}
+label,
+fieldset,
+legend {
+  display: block;
+  margin-bottom: 15px;
+}
+/* ESTILO DE LOS INPUTS */
+input,
+select {
+  margin-top: 10px;
+  display: block;
+  outline: none;
+  border: 1.5px solid var(--primary-gray);
+  color: var(--primary-gray);
+  width: 100%;
+  padding: 16px;
+  border-radius: 15px;
+  transition: border-color 0.3s ease-in-out;
+}
+.combined-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  gap: 20px;
+  & label {
+    flex: 1;
+  }
+  & input,
+  select {
+    width: 100%;
+  }
+}
+select {
+  cursor: pointer;
+}
+/* BOTONES 'CTAS' -> CALL TO ACTION */
+.form-ctas {
+  display: flex;
+  margin-top: 20px;
+  justify-content: stretch;
+  align-items: center;
+  gap: 15px;
+}
+.btn {
+  display: block;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn-secondary {
+  background-color: var(--accent-white);
+  color: black;
+  font-weight: 600;
+  flex: 1;
+}
+.btn-primary {
+  background-color: var(--primary-purple);
+  color: white;
+  flex: 3;
+}
+/* ESTILO DE LOS RADIOS DEL FORMULARIO */
+fieldset {
+  border: none;
+}
+.box-radio-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+.box-radio {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  & img {
+    width: 30px;
+    height: 30px;
+  }
+  & p {
+    font-size: 1.1em;
+    color: black;
+  }
+}
+.box-radio * {
+  pointer-events: none;
+}
+.on-select {
+  border: 2px solid var(--primary-gray);
+  border-radius: 15px;
+  padding: 18px;
+  cursor: pointer;
+  transition: border-color 0.3s ease-in-out, border-width 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+}
+.on-select[data-checked="true"] {
+  background-color: var(--accent-purple);
+  border-width: 2px;
+  border-color: var(--primary-purple);
+}
+.plan-box-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+legend strong {
+  color: black;
+  font-size: 1.2em;
+}
+.plan-box-radio {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  gap: 20px;
+  & input[type="radio"] {
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+  }
+  & label {
+    color: black;
+  }
+}
+.plan-box-radio * {
+  pointer-events: none;
+}
+hr {
+  width: 100%;
+  border: none;
+  height: 1.5px;
+  background-color: var(--primary-gray);
+  margin: 30px auto;
+}
+/* PRECIO TOTAL, MENSAJE DE ADVERTENCIA Y IMAGEN DE IMPACTO */
+.total-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & p {
+    font-size: 1.5em;
+  }
+}
+.warning-message {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  gap: 10px;
+  & img {
+    width: 30px;
+    height: 30px;
+  }
+  & p {
+    font-size: 15px;
+  }
+}
+.impact-img {
+  object-fit: contain;
+  width: 100%;
+  height: 340px;
+  position: relative;
+}
+input.error,
+select.error {
+  border-color: var(--red);
+}
+span.error-message {
+  color: var(--red);
+  font-size: 0.8em;
+  margin-top: 5px;
+}

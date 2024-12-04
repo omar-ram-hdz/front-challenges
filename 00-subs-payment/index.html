@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscription Payment | Front-Challenges</title>
+    <link rel="shortcut icon" href="./images/icon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Para mejor semantica -->
+      <form novalidate>
+        <section class="form-section">
+          <!-- Header, logotipo, titulo y descripcion -->
+          <header>
+            <article class="logotipo">
+              <img src="./images/icon.svg" alt="App icon" />
+              <p>Neuralite</p>
+            </article>
+            <h1>Upgrade to Plus</h1>
+            <p>
+              Upgrade today and take your AI-powered productivity to the next
+              level.
+            </p>
+          </header>
+          <!-- Campo de texto para el nombre de la empresa -->
+          <label>
+            Billed to
+            <input
+              type="text"
+              name="fullname"
+              placeholder="Enter first & last name"
+              required
+              minlength="4"
+              maxlength="40"
+              autocapitalize="on"
+              autocomplete="off"
+              aria-describedby="fullname-error"
+            />
+            <span class="error-message" id="fullname-error"></span>
+          </label>
+          <!-- Campo de seleccion de tipo de pago -->
+          <fieldset>
+            <legend>Payment Details</legend>
+            <article class="box-radio-group">
+              <div
+                role="radio"
+                data-checked="false"
+                class="box-radio on-select"
+                aria-describedby="payment-error"
+              >
+                <img src="./images/svg-credit-card.svg" alt="Credit Card" />
+                <p>Credit Card</p>
+              </div>
+              <div
+                role="radio"
+                data-checked="false"
+                class="box-radio on-select"
+                aria-describedby="payment-error"
+              >
+                <img src="./images/svg-bank.svg" alt="Bank Transfer" />
+                <p>Bank Transfer</p>
+              </div>
+              <div
+                role="radio"
+                data-checked="false"
+                class="box-radio on-select"
+                aria-describedby="payment-error"
+              >
+                <img src="./images/svg-points.svg" alt="Points" />
+                <p>Points</p>
+              </div>
+            </article>
+            <span class="error-message" id="payment-error"></span>
+          </fieldset>
+          <!-- Campo de email -->
+          <label>
+            Email Adress
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter email address"
+              required
+              aria-describedby="email-error"
+            />
+            <span class="error-message" id="email-error"></span>
+          </label>
+          <!-- Campo de seleccion de pais 
+            Inputs combinados 
+          -->
+          <article class="combined-input">
+            <label>
+              Country
+              <select name="country" required aria-describedby="country-error">
+                <option value="" selected disabled>Select country</option>
+                <option value="US">United States</option>
+                <option value="CA">Canada</option>
+                <option value="MX">Mexico</option>
+              </select>
+              <span class="error-message" id="country-error"></span>
+            </label>
+            <label>
+              Postal Code
+              <input
+                type="number"
+                name="postal"
+                placeholder="00270"
+                required
+                minlength="4"
+                maxlength="5"
+                aria-describedby="postal-error"
+              />
+              <span class="error-message" id="postal-error"></span>
+            </label>
+          </article>
+          <!-- Botones 'CTAS' -> Call to Action -->
+          <menu class="form-ctas">
+            <button type="button" class="btn btn-secondary">Cancel</button>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </menu>
+        </section>
+        <!-- Segunda sección, con fondo gris azul -->
+        <section class="form-section accent">
+          <!-- Campos de selección de plan -->
+          <fieldset>
+            <legend><strong>Starter Plan</strong></legend>
+            <div class="plan-box-group">
+              <div
+                role="radio"
+                class="plan-box-radio on-select"
+                data-checked="false"
+                aria-describedby="plan-error"
+              >
+                <input
+                  type="radio"
+                  name="plan"
+                  id="montly"
+                  value="20"
+                  required
+                />
+                <section>
+                  <label for="starter">Pay monthly</label>
+                  <p><data value="20.00">$20</data>/Month/Member</p>
+                </section>
+              </div>
+              <div
+                role="radio"
+                class="plan-box-radio on-select"
+                data-checked="false"
+                aria-describedby="plan-error"
+              >
+                <input
+                  type="radio"
+                  name="plan"
+                  id="annual"
+                  value="16"
+                  required
+                />
+                <section>
+                  <label for="pro">Pay Annual</label>
+                  <p><data value="16.00">$16</data>/Month/Member</p>
+                </section>
+              </div>
+            </div>
+            <span class="error-message" id="plan-error"></span>
+          </fieldset>
+          <hr width="90%" />
+          <!-- Precio total y imagen de impacto -->
+          <article class="total-price">
+            <p><strong>Total</strong></p>
+            <p>
+              <strong><data value="20.00">$20</data>/Month</strong>
+            </p>
+          </article>
+          <article class="warning-message">
+            <img src="./images//svg-security.svg" alt="Warning" />
+            <p>
+              This environment is for demonstrating purposes only. Please
+              refrain from entering any actual sensitive data.
+            </p>
+          </article>
+          <img
+            src="./images/svg-ming.svg"
+            alt="Imagen de impacto"
+            class="impact-img"
+          />
+        </section>
+      </form>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
