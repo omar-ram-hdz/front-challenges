@@ -102,6 +102,7 @@ $planBoxRadio.forEach((box) => {
     box.querySelector("input[type='radio']").checked = checked === "false";
   });
 });
+// Evento del precio total
 $planBoxRadio.forEach((box) => {
   box.addEventListener("click", (e) => {
     const checked = box.getAttribute("data-checked") === "true";
