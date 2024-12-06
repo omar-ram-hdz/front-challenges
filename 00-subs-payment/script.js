@@ -5,6 +5,7 @@ const $btnSubscribe = d.querySelector(".btn-primary"),
   $btnCancel = d.querySelector(".btn-secondary");
 const $boxRadio = d.querySelectorAll(".box-radio"),
   $planBoxRadio = d.querySelectorAll(".plan-box-radio");
+const $totalPrice = d.querySelector(".total-price data");
 const $fields = d.querySelectorAll(
   '[type="text"],[type="email"], [type="number"], select'
 );
@@ -99,5 +100,15 @@ $planBoxRadio.forEach((box) => {
       box.setAttribute("data-checked", true);
     }
     box.querySelector("input[type='radio']").checked = checked === "false";
+  });
+});
+$planBoxRadio.forEach((box) => {
+  box.addEventListener("click", (e) => {
+    const checked = box.getAttribute("data-checked") === "true";
+    if (checked) {
+      let total = box.querySelector("data").value;
+      $totalPrice.value = total;
+      $totalPrice.innerText = "$" + Math.round(Number(total));
+    }
   });
 });
